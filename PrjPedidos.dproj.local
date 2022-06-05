@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/02/16 10:21:42.000.996,=C:\Users\raphael.gusso\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 10:06:55.000.984,=C:\Users\raphael.gusso\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 10:07:38.000.524,C:\Users\raphael.gusso\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\U_Pedidos.dfm</Transaction>
+    <Transaction>2022/04/06 10:07:38.000.524,C:\Users\raphael.gusso\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\U_Pedidos.pas</Transaction>
+    <Transaction>2022/04/06 10:07:48.000.736,C:\Users\raphael.gusso\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\PrjPedidos.dproj</Transaction>
+    <Transaction>2022/04/06 10:45:58.000.500,=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/06 10:46:48.000.903,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnDmConexao.pas</Transaction>
+    <Transaction>2022/04/06 10:46:48.000.903,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.dfm=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnDmConexao.dfm</Transaction>
+    <Transaction>2022/04/13 08:44:26.000.229,=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 08:45:16.000.621,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnManPadrao.dfm=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.dfm</Transaction>
+    <Transaction>2022/04/13 08:45:16.000.621,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnManPadrao.pas=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 10:36:40.000.791,=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 10:36:50.000.082,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnCep.dfm=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.dfm</Transaction>
+    <Transaction>2022/04/13 10:36:50.000.082,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnCep.pas=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 10:48:29.000.684,=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 10:48:56.000.617,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnDMCEP.pas=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.pas</Transaction>
+    <Transaction>2022/04/13 10:48:56.000.617,C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\UnDMCEP.dfm=C:\Users\raphael.gusso\Desktop\aula 03 - intermediário\Unit1.dfm</Transaction>
+    <Transaction>2022/04/27 08:33:06.000.331,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 09:41:26.000.670,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 09:42:15.000.616,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.pas=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\UnDMClientes.pas</Transaction>
+    <Transaction>2022/04/27 09:42:15.000.616,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.dfm=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\UnDMClientes.dfm</Transaction>
+    <Transaction>2022/04/27 09:56:59.000.506,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/04/27 09:58:01.000.779,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.dfm=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\UnClientes.dfm</Transaction>
+    <Transaction>2022/04/27 09:58:01.000.779,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\Unit1.pas=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projetos e arquivos da aula Delphi\Projeto pedidos - aula Delphi\UnClientes.pas</Transaction>
+    <Transaction>2022/05/31 11:23:33.000.621,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\unDmFornec.pas</Transaction>
+    <Transaction>2022/05/31 11:34:37.000.422,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\unClasseFornec.pas</Transaction>
+    <Transaction>2022/05/31 11:35:35.000.699,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\unFornecView.pas</Transaction>
+    <Transaction>2022/05/31 11:36:24.000.695,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\unFornecView.pas=</Transaction>
+    <Transaction>2022/05/31 12:11:44.000.170,=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/31 12:11:59.000.077,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\UnFornec.pas=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/05/31 12:11:59.000.077,C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\UnFornec.dfm=C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/06/01 08:18:09.000.650,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 08:18:48.000.193,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Bib.pas=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 09:27:04.000.310,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 09:28:01.000.431,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMSenhaUsuario.pas=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 09:28:01.000.431,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMSenhaUsuario.dfm=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/06/01 09:56:11.000.741,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 09:56:27.000.255,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnUsuSenhaView.pas</Transaction>
+    <Transaction>2022/06/01 09:56:27.000.255,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.dfm=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnUsuSenhaView.dfm</Transaction>
+    <Transaction>2022/06/01 10:14:36.000.592,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMUsuario.pas</Transaction>
+    <Transaction>2022/06/01 10:15:05.000.425,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnUsuarioView.pas</Transaction>
+    <Transaction>2022/06/01 10:43:42.000.628,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 10:44:04.000.400,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnClasseUsuario.pas=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 11:35:51.000.850,=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 11:36:08.000.637,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMUsu.dfm=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.dfm</Transaction>
+    <Transaction>2022/06/01 11:36:08.000.637,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMUsu.pas=C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\Unit1.pas</Transaction>
+    <Transaction>2022/06/01 11:46:41.000.532,C:\Users\raphael.gusso\Documents\Projeto pedidos - aula Delphi atual\Projeto pedidos - aula Delphi\UnDMUsuario.pas=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Bib.PAS"/>
+    <File Path="UnCep.pas"/>
+    <File Path="UnCep.dfm"/>
+    <File Path="unClasseFornec.pas"/>
+    <File Path="UnClasseUsuario.pas"/>
+    <File Path="UnClientes.pas"/>
+    <File Path="UnClientes.dfm"/>
+    <File Path="UnDMCEP.pas"/>
+    <File Path="UnDMCEP.dfm"/>
+    <File Path="UnDMClientes.pas"/>
+    <File Path="UnDMClientes.dfm"/>
+    <File Path="UnDmConexao.pas"/>
+    <File Path="UnDmConexao.dfm"/>
+    <File Path="unDmFornec.pas"/>
+    <File Path="unDmFornec.dfm"/>
+    <File Path="UnDMUsu.pas"/>
+    <File Path="UnDMUsu.dfm"/>
+    <File Path="UnFornec.pas"/>
+    <File Path="UnFornec.dfm"/>
+    <File Path="UnManPadrao.pas"/>
+    <File Path="UnManPadrao.dfm"/>
+    <File Path="UnUsuarioView.pas"/>
+    <File Path="UnUsuarioView.dfm"/>
+    <File Path="U_Pedidos.pas"/>
+    <File Path="U_Pedidos.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
