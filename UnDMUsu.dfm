@@ -53,7 +53,7 @@ object DMUsu: TDMUsu
   object QrUsuarioAux: TFDQuery
     Connection = DmConexao.FDConnection
     SQL.Strings = (
-      '')
+      'select * from usuario;')
     Left = 280
     Top = 32
   end

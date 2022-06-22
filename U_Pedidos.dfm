@@ -13,6 +13,7 @@ object FrmPedidos: TFrmPedidos
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
@@ -522,7 +523,6 @@ object FrmPedidos: TFrmPedidos
     ShowCaptions = True
     TabOrder = 0
     Transparent = True
-    ExplicitHeight = 332
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -571,8 +571,6 @@ object FrmPedidos: TFrmPedidos
       item
         Width = 50
       end>
-    ExplicitTop = 332
-    ExplicitWidth = 680
   end
   object MainMenu1: TMainMenu
     Left = 616

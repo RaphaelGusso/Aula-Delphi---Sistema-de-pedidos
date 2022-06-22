@@ -27,7 +27,9 @@ type TUsuario = class
       procedure Cancelar;
       procedure Salvar;
       procedure GetDados;
-      Function GetId(IDusuario : String) : String;
+      Function GetId(cEmail : String) : String;
+      Function GetSenha(cUsuID : String) : String;
+      Function GetNome(cUsuID : String) : String;
 
       Function Criptografa(const texto:string) : string;
       function GetCds: TClientDataSet;
@@ -120,17 +122,41 @@ begin
 end;
 
 
-function TUsuario.GetId(IDusuario: String): String;
-var
-vTipo, vRetorno, pValue : string;
+function TUsuario.GetId(cEmail: String): String;
 begin
-  {DMUsu.QrUsuarioAux.Close;
-  DMUsu.QrUsuarioAux.Open('select USU_ID, USU_SENHA, USU_NOME, USU_CPF from usuario where' +
-                          vTipo + '=' + QuotedStr(pValue));
-  Result:= DMUsu.QrUsuarioAux.FieldByName(IDusuario).AsString;
-  ShowMessage(Result);}
+Result:= '';
+  DMUsu.QrUsuarioAux.SQL.Clear;
+  DMUsu.QrUsuarioAux.SQL.Add('SELECT USU_ID FROM USUARIO ' + 'WHERE USU_EMAIL='+
+                              QuotedStr(CEmail) + 'ORDER BY USU_ID');
+  DMUsu.QrUsuarioAux.Open;
+  Result:=DMUsu.QrUsuarioAux.FieldByName('USU_ID').AsString;
+  DMUsu.QrUsuarioAux.Close;
 end;
 
+
+function TUsuario.GetNome(cUsuID: String): String;
+begin
+//  CUsuId:= UpperCase(CUsuId);
+  Result:= '';
+  DMUsu.QrUsuarioAux.SQL.Clear;
+  DMUsu.QrUsuarioAux.SQL.Add('SELECT USU_ID FROM USUARIO  WHERE USU_ID= '+
+                              QuotedStr(CUsuId) + ' ORDER BY USU_NOME');
+  DMUsu.QrUsuarioAux.Open;
+  Result:=DMUsu.QrUsuarioAux.FieldByName('USU_ID').AsString;
+  DMUsu.QrUsuarioAux.Close;
+end;
+
+function TUsuario.GetSenha(cUsuID: String): String;
+begin
+//  CUsuId:= UpperCase(CUsuId);
+  Result:= '';
+  DMUsu.QrUsuarioAux.SQL.Clear;
+  DMUsu.QrUsuarioAux.SQL.Add('SELECT USU_SENHA FROM USUARIO WHERE USU_ID= '+
+                              QuotedStr(CUsuId) + ' ORDER BY USU_ID');
+  DMUsu.QrUsuarioAux.Open;
+  Result:=DMUsu.QrUsuarioAux.FieldByName('USU_SENHA').AsString;
+  DMUsu.QrUsuarioAux.Close;
+end;
 
 procedure TUsuario.Incluir;
 begin
@@ -155,7 +181,8 @@ end;
 
 procedure TUsuario.Setsenha(const Value: string);
 begin
-  Fsenha := Criptografa(Fsenha);
+  Fsenha := Criptografa(Value);
+//    Fsenha := Value;
 end;
 
 end.

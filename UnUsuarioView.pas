@@ -32,6 +32,7 @@ type
     procedure actsalvarExecute(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     oUsuario : TUsuario;
   public
@@ -44,6 +45,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmUsuario.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  Action:= CaFree;
+end;
 
 procedure TFrmUsuario.FormCreate(Sender: TObject);
 begin

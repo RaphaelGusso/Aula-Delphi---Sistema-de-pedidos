@@ -46,6 +46,7 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure ActFornExecute(Sender: TObject);
     procedure Cadastrodeusurios1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,7 +60,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnClientes, UnFornec, UnUsuarioView;
+uses UnClientes, UnFornec, UnUsuarioView, UnLogin;
 
 procedure TFrmPedidos.ActCEPExecute(Sender: TObject);
 begin
@@ -88,6 +89,11 @@ procedure TFrmPedidos.Cadastrodeusurios1Click(Sender: TObject);
 begin
   Application.CreateForm(TFrmUsuario , FrmUsuario);
   FrmUsuario.ShowModal;
+end;
+
+procedure TFrmPedidos.FormShow(Sender: TObject);
+begin
+  FrmLogin.ShowModal;
 end;
 
 procedure TFrmPedidos.Timer1Timer(Sender: TObject);

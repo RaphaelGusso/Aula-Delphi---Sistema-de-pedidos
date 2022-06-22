@@ -2,7 +2,6 @@
   Caption = 'Cadastro de usu'#225'rios'
   ClientHeight = 370
   ClientWidth = 591
-  OnClose = nil
   OnDestroy = FormDestroy
   ExplicitWidth = 607
   ExplicitHeight = 409
