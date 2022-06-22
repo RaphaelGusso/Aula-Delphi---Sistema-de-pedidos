@@ -3,7 +3,7 @@ unit UnClasseUsuario;
 interface
 
 uses
-  System.SysUtils, System.Classes, Vcl.Dialogs, Datasnap.DBClient, Data.DB;
+  System.SysUtils, System.Classes, Vcl.Dialogs, Datasnap.DBClient, Data.DB, IdHashMessageDigest, Variants;
 
 type TUsuario = class
 
@@ -15,6 +15,8 @@ type TUsuario = class
       Ftelefone: string;
       Fcpf: string;
       Fsenha: string;
+    procedure Setsenha(const Value: string);
+
   public
       constructor Create;
       destructor Destroy;
@@ -25,17 +27,18 @@ type TUsuario = class
       procedure Cancelar;
       procedure Salvar;
       procedure GetDados;
+      Function GetId(IDusuario : String) : String;
 
+      Function Criptografa(const texto:string) : string;
       function GetCds: TClientDataSet;
       function GetCodigo: integer;
-
       Property codigo:string read Fcodigo write Fcodigo;
       Property nome:string read Fnome write Fnome;
       Property email:string read Femail write Femail;
       Property endereço:string read Fend write Fend;
       Property telefone:string read Ftelefone write Ftelefone;
       Property CPF:string read Fcpf write Fcpf;
-      property senha:string read Fsenha write Fsenha;
+      property senha:string read Fsenha write Setsenha;
 end;
 
 implementation
@@ -58,11 +61,24 @@ end;
 
 constructor TUsuario.Create;
 begin
-    try
-    DMUsu := DMUsu.Create(nil);
+  try
+  //if not assigned (DMUsu) then
+    DMUsu := TDMUsu.Create(nil);
     DMUsu.CDSUsuario.Open;
   except
     showmessage('Ocorreu um erro ao tentar criar o datamodule de Usuário');
+  end;
+end;
+
+function TUsuario.Criptografa(const texto: string): string;
+var
+  idm5 : TIdHashMessageDigest5;
+begin
+  idm5 := TIdHashMessageDigest5.Create;
+  try
+    result := idm5.hashStringAsHex(texto);
+  finally
+    idm5.Free;
   end;
 end;
 
@@ -75,7 +91,9 @@ end;
 procedure TUsuario.Excluir;
 begin
     if Assigned(DMUsu) then
+  begin
     DMUsu.ExcluirUsuario;
+  end;
 end;
 
 function TUsuario.GetCds: TClientDataSet;
@@ -93,12 +111,26 @@ end;
 procedure TUsuario.GetDados;
 begin
   Fcodigo := DMUsu.CDSUsuarioUSU_ID.Text;
+  FNome := DmUsu.CDSUsuarioUSU_NOME.Text;
   Femail := DMUsu.CDSUsuarioUSU_EMAIL.Text;
   Fend := DMUsu.CDSUsuarioUSU_END.Text;
   Ftelefone := DMUsu.CDSUsuarioUSU_TELEFONE.Text;
   Fcpf := DMUsu.CDSUsuarioUSU_CPF.Text;
   Fsenha := DMUsu.CDSUsuarioUSU_SENHA.Text;
 end;
+
+
+function TUsuario.GetId(IDusuario: String): String;
+var
+vTipo, vRetorno, pValue : string;
+begin
+  {DMUsu.QrUsuarioAux.Close;
+  DMUsu.QrUsuarioAux.Open('select USU_ID, USU_SENHA, USU_NOME, USU_CPF from usuario where' +
+                          vTipo + '=' + QuotedStr(pValue));
+  Result:= DMUsu.QrUsuarioAux.FieldByName(IDusuario).AsString;
+  ShowMessage(Result);}
+end;
+
 
 procedure TUsuario.Incluir;
 begin
@@ -115,8 +147,15 @@ begin
   DMUsu.CDSUsuarioUSU_TELEFONE.Text    := Ftelefone;
   DMUsu.CDSUsuarioUSU_CPF.Text         := Fcpf;
   DMUsu.CDSUsuarioUSU_SENHA.Text       := Fsenha;
+
   if Assigned(DMUsu) then
     DMUsu.SalvarUsuario;
+end;
+
+
+procedure TUsuario.Setsenha(const Value: string);
+begin
+  Fsenha := Criptografa(Fsenha);
 end;
 
 end.

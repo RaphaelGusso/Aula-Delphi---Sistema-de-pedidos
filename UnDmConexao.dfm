@@ -8,8 +8,8 @@ object DmConexao: TDmConexao
       'User_Name=sysdba'
       'Password=masterkey'
       
-        'Database=C:\Users\rapha\OneDrive\'#193'rea de Trabalho\Estudos\Projet' +
-        'o pedidos - aula Delphi\DBCURSO.FDB'
+        'Database=C:\Users\rapha\OneDrive\Documentos\GitHub\Aula-Delphi--' +
+        '-Sistema-de-pedidos\DBCURSO.FDB'
       'Port=3050'
       'Server=127.0.0.1'
       'DriverID=FB')

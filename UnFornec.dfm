@@ -1,50 +1,44 @@
 inherited FrmFornecec: TFrmFornecec
   Caption = 'Cadastro de fornecedores'
-  ClientHeight = 414
-  ClientWidth = 606
-  ExplicitWidth = 622
-  ExplicitHeight = 453
+  ClientHeight = 421
+  ClientWidth = 613
+  ExplicitWidth = 629
+  ExplicitHeight = 460
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
-    Width = 606
-    ExplicitTop = 0
-    ExplicitWidth = 606
+    Width = 613
+    ExplicitWidth = 613
   end
   inherited StatusBar1: TStatusBar
-    Top = 395
-    Width = 606
-    ExplicitTop = 395
-    ExplicitWidth = 606
+    Top = 402
+    Width = 613
+    ExplicitTop = 402
+    ExplicitWidth = 613
   end
   inherited pagecontrol1: TPageControl
-    Width = 606
-    Height = 301
-    ExplicitWidth = 606
-    ExplicitHeight = 301
+    Width = 613
+    Height = 308
+    ActivePage = TBSDados
+    ExplicitWidth = 613
+    ExplicitHeight = 308
     inherited TBSConsulta: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 598
-      ExplicitHeight = 273
+      ExplicitWidth = 605
+      ExplicitHeight = 280
       inherited gridconsulta: TDBGrid
-        Width = 598
-        Height = 273
+        Width = 605
+        Height = 280
         DataSource = DSFornec
       end
     end
     inherited TBSDados: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 598
-      ExplicitHeight = 273
+      ExplicitWidth = 605
+      ExplicitHeight = 280
       inherited ScrollBox1: TScrollBox
-        Top = 3
-        Width = 646
-        Height = 268
-        ExplicitTop = 3
-        ExplicitWidth = 646
-        ExplicitHeight = 268
+        Width = 605
+        Height = 280
+        ExplicitWidth = 605
+        ExplicitHeight = 280
         object Label1: TLabel
           Left = 3
           Top = 8
@@ -186,11 +180,11 @@ inherited FrmFornecec: TFrmFornecec
     end
   end
   inherited DBNavigator1: TDBNavigator
-    Top = 370
-    Width = 606
+    Top = 377
+    Width = 613
     Hints.Strings = ()
-    ExplicitTop = 370
-    ExplicitWidth = 606
+    ExplicitTop = 377
+    ExplicitWidth = 613
   end
   inherited ImageList: TImageList
     Left = 552

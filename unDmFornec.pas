@@ -119,6 +119,7 @@ procedure TdmFornec.SalvarFornec;
 begin
   try
     cdsFornec.Post;
+    cdsFornec.ApplyUpdates(-1);
 
   except
     on E: Exception do

@@ -1,47 +1,46 @@
 inherited FrmCEP: TFrmCEP
+  Align = alClient
   Caption = 'Cadastro de CEPs'
-  ClientHeight = 390
-  ClientWidth = 607
+  ClientHeight = 429
+  ClientWidth = 717
   OnDestroy = FormDestroy
-  ExplicitWidth = 623
-  ExplicitHeight = 429
+  ExplicitWidth = 733
+  ExplicitHeight = 468
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
-    Width = 607
-    ExplicitTop = 0
-    ExplicitWidth = 607
+    Width = 717
+    ExplicitWidth = 717
   end
   inherited StatusBar1: TStatusBar
-    Top = 371
-    Width = 607
-    ExplicitTop = 371
-    ExplicitWidth = 607
+    Top = 410
+    Width = 717
+    ExplicitTop = 410
+    ExplicitWidth = 717
   end
   inherited pagecontrol1: TPageControl
-    Width = 607
-    Height = 277
-    ExplicitWidth = 607
-    ExplicitHeight = 277
+    Width = 717
+    Height = 316
+    ExplicitWidth = 717
+    ExplicitHeight = 316
     inherited TBSConsulta: TTabSheet
-      ExplicitWidth = 599
-      ExplicitHeight = 249
+      ExplicitWidth = 709
+      ExplicitHeight = 288
       inherited gridconsulta: TDBGrid
-        Width = 599
-        Height = 249
+        Width = 709
+        Height = 288
         DataSource = dscadastro
       end
     end
     inherited TBSDados: TTabSheet
-      ExplicitWidth = 599
-      ExplicitHeight = 249
+      ExplicitWidth = 709
+      ExplicitHeight = 288
       object Label1: TLabel [0]
         Left = 24
         Top = 16
         Width = 11
         Height = 13
         Caption = 'ID'
-        FocusControl = DBEdit1
       end
       object Label2: TLabel [1]
         Left = 88
@@ -49,7 +48,6 @@ inherited FrmCEP: TFrmCEP
         Width = 19
         Height = 13
         Caption = 'CEP'
-        FocusControl = DBEdit2
       end
       object Label3: TLabel [2]
         Left = 186
@@ -57,7 +55,6 @@ inherited FrmCEP: TFrmCEP
         Width = 13
         Height = 13
         Caption = 'UF'
-        FocusControl = DBEdit3
       end
       object Label4: TLabel [3]
         Left = 22
@@ -65,7 +62,6 @@ inherited FrmCEP: TFrmCEP
         Width = 21
         Height = 13
         Caption = 'RUA'
-        FocusControl = DBEdit4
       end
       object Label5: TLabel [4]
         Left = 22
@@ -73,73 +69,139 @@ inherited FrmCEP: TFrmCEP
         Width = 38
         Height = 13
         Caption = 'CIDADE'
-        FocusControl = DBEdit5
       end
       inherited ScrollBox1: TScrollBox
-        Width = 601
-        Height = 247
-        TabOrder = 5
-        ExplicitWidth = 601
-        ExplicitHeight = 247
-      end
-      object DBEdit1: TDBEdit
-        Left = 24
-        Top = 35
-        Width = 44
-        Height = 21
-        DataField = 'CEP_ID'
-        DataSource = dscadastro
-        TabOrder = 0
-      end
-      object DBEdit2: TDBEdit
-        Left = 88
-        Top = 35
-        Width = 79
-        Height = 21
-        DataField = 'CEP_CEP'
-        DataSource = dscadastro
-        TabOrder = 1
-      end
-      object DBEdit3: TDBEdit
-        Left = 186
-        Top = 35
-        Width = 30
-        Height = 21
-        DataField = 'CEP_UF'
-        DataSource = dscadastro
-        TabOrder = 2
-      end
-      object DBEdit4: TDBEdit
-        Left = 22
-        Top = 82
-        Width = 400
-        Height = 21
-        DataField = 'CEP_RUA'
-        DataSource = dscadastro
-        TabOrder = 3
-      end
-      object DBEdit5: TDBEdit
-        Left = 22
-        Top = 130
-        Width = 145
-        Height = 21
-        DataField = 'CEP_CIDADE'
-        DataSource = dscadastro
-        TabOrder = 4
+        Left = 3
+        Top = -1
+        Width = 702
+        Height = 286
+        ExplicitLeft = 3
+        ExplicitTop = -1
+        ExplicitWidth = 702
+        ExplicitHeight = 286
+        object Label7: TLabel
+          Left = 16
+          Top = 38
+          Width = 23
+          Height = 13
+          Caption = 'CEP:'
+        end
+        object Label8: TLabel
+          Left = 278
+          Top = 94
+          Width = 17
+          Height = 13
+          Caption = 'UF:'
+        end
+        object Label9: TLabel
+          Left = 16
+          Top = 69
+          Width = 23
+          Height = 13
+          Caption = 'Rua:'
+        end
+        object Label10: TLabel
+          Left = 278
+          Top = 67
+          Width = 37
+          Height = 13
+          Caption = 'Cidade:'
+        end
+        object Label6: TLabel
+          Left = 13
+          Top = 91
+          Width = 32
+          Height = 13
+          Caption = 'Bairro:'
+        end
+        object Label11: TLabel
+          Left = 278
+          Top = 45
+          Width = 11
+          Height = 13
+          Caption = 'ID'
+        end
+        object Button1: TButton
+          Left = 185
+          Top = 35
+          Width = 60
+          Height = 25
+          Caption = 'Consultar'
+          TabOrder = 0
+          OnClick = Button1Click
+        end
+        object edbairro: TEdit
+          Left = 44
+          Top = 94
+          Width = 228
+          Height = 21
+          TabOrder = 1
+        end
+        object edcep: TDBEdit
+          Left = 45
+          Top = 37
+          Width = 134
+          Height = 21
+          DataField = 'CEP_CEP'
+          DataSource = dscadastro
+          TabOrder = 2
+        end
+        object edrua: TDBEdit
+          Left = 45
+          Top = 67
+          Width = 227
+          Height = 21
+          DataField = 'CEP_RUA'
+          DataSource = dscadastro
+          TabOrder = 3
+        end
+        object eduf: TDBEdit
+          Left = 316
+          Top = 91
+          Width = 30
+          Height = 21
+          DataField = 'CEP_UF'
+          DataSource = dscadastro
+          TabOrder = 4
+        end
+        object edcidade: TDBEdit
+          Left = 316
+          Top = 64
+          Width = 141
+          Height = 21
+          DataField = 'CEP_CIDADE'
+          DataSource = dscadastro
+          TabOrder = 5
+        end
+        object edid: TDBEdit
+          Left = 316
+          Top = 37
+          Width = 30
+          Height = 21
+          DataField = 'CEP_ID'
+          DataSource = dscadastro
+          TabOrder = 6
+        end
       end
     end
   end
   inherited DBNavigator1: TDBNavigator
-    Top = 346
-    Width = 607
+    Top = 385
+    Width = 717
     DataSource = dscadastro
     Hints.Strings = ()
-    ExplicitTop = 346
-    ExplicitWidth = 607
+    ExplicitTop = 385
+    ExplicitWidth = 717
+  end
+  inherited ImageList: TImageList
+    Left = 600
+  end
+  inherited ActionList: TActionList
+    Left = 600
   end
   object dscadastro: TDataSource
     DataSet = DMCEP.CDSCEP
-    Left = 496
-    Top = 208
+    Left = 600
+    Top = 200
   end
 end

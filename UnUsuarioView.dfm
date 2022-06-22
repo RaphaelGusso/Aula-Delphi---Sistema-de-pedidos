@@ -1,14 +1,15 @@
-﻿inherited FrmUsuSenhaView: TFrmUsuSenhaView
-  Caption = 'Cadastro de senhas para login:'
+﻿inherited FrmUsuario: TFrmUsuario
+  Caption = 'Cadastro de usu'#225'rios'
   ClientHeight = 370
   ClientWidth = 591
+  OnClose = nil
+  OnDestroy = FormDestroy
   ExplicitWidth = 607
   ExplicitHeight = 409
   PixelsPerInch = 96
   TextHeight = 13
   inherited ToolBar1: TToolBar
     Width = 591
-    ExplicitTop = 0
     ExplicitWidth = 591
   end
   inherited StatusBar1: TStatusBar
@@ -20,6 +21,7 @@
   inherited pagecontrol1: TPageControl
     Width = 591
     Height = 257
+    ActivePage = TBSDados
     ExplicitWidth = 591
     ExplicitHeight = 257
     inherited TBSConsulta: TTabSheet
@@ -35,10 +37,10 @@
       ExplicitWidth = 583
       ExplicitHeight = 229
       inherited ScrollBox1: TScrollBox
-        Width = 585
-        Height = 227
-        ExplicitWidth = 585
-        ExplicitHeight = 227
+        Width = 583
+        Height = 229
+        ExplicitWidth = 583
+        ExplicitHeight = 229
         object Label1: TLabel
           Left = 20
           Top = 16
@@ -110,7 +112,7 @@
           TabOrder = 2
         end
         object Ed_EndUsu: TEdit
-          Left = 71
+          Left = 81
           Top = 99
           Width = 242
           Height = 21
@@ -137,6 +139,7 @@
           Top = 159
           Width = 184
           Height = 21
+          PasswordChar = '#'
           TabOrder = 6
         end
       end
@@ -150,6 +153,7 @@
     ExplicitWidth = 591
   end
   object DSUsuario: TDataSource
+    DataSet = DMUsu.CDSUsuario
     Left = 496
     Top = 208
   end

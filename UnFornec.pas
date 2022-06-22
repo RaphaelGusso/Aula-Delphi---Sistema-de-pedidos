@@ -29,15 +29,17 @@ type
     Ed_UFFornec: TEdit;
     Label9: TLabel;
     Memo_ObsFornec: TMemo;
-    procedure actInserirExecute(Sender: TObject);
+    {procedure actInserirExecute(Sender: TObject);}
     procedure actEditarExecute(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
     procedure actCancelarExecute(Sender: TObject);
     procedure DSFornecDataChange(Sender: TObject; Field: TField);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure actsalvarExecute(Sender: TObject);
+    procedure actincluirExecute(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    //procedure actincluirExecute(Sender: TObject);
   private
     { Private declarations }
     oFornec: TFornecedor;
@@ -60,9 +62,27 @@ uses UnDmConexao, unDmFornec;
 
 { TFrmFornecec }
 
+procedure TFrmFornecec.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+    FreeAndNil(oFornec);
+end;
+
+procedure TFrmFornecec.FormCreate(Sender: TObject);
+begin
+  inherited;
+  oFornec := TFornecedor.Create;
+end;
+
 procedure TFrmFornecec.actCancelarExecute(Sender: TObject);
 begin
   oFornec.Cancelar;
+  actincluir.Enabled:= true;
+  actalterar.Enabled:= true;
+  actexcluir.Enabled:= true;
+  actcancelar.Enabled:= true;
+  actsalvar.Enabled:= true;
+  actsair.Enabled:= true;
 end;
 
 procedure TFrmFornecec.actEditarExecute(Sender: TObject);
@@ -79,24 +99,26 @@ begin
   end;
 end;
 
-procedure TFrmFornecec.actInserirExecute(Sender: TObject);
+procedure TFrmFornecec.actincluirExecute(Sender: TObject);
 begin
-//Limpo campos
+  inherited;
   LimpaCampos;
-
   oFornec.Incluir;
- {Ed_codFornec.value:=oFornec.GetCodigo; }
+  //Ed_codFornec.Text:= oFornec.GetNextCodigo;
+
 end;
 
 procedure TFrmFornecec.actsalvarExecute(Sender: TObject);
 begin
   inherited;
-  //oFornec.codigo := ed_codigo.value;
+  oFornec.Codigo := StrToInt(Ed_CodFornec.Text);
   oFornec.nome := Ed_NomeFornec.Text;
   oFornec.cpf := MSE_CPFFornec.Text;
   oFornec.telefone := MSE_telFornec.Text;
   oFornec.cep := vCodCep;
   oFornec.obs := MEMO_ObsFornec.Lines.Text;
+
+  oFornec.Salvar;
 end;
 
 procedure TFrmFornecec.DSFornecDataChange(Sender: TObject; Field: TField);
@@ -108,19 +130,6 @@ begin
     if (dsFornec.DataSet.State=dsBrowse) then
       MostraDados;
   end;
-end;
-
-procedure TFrmFornecec.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  inherited;
-  FreeAndNil(oFornec);
-end;
-
-procedure TFrmFornecec.FormCreate(Sender: TObject);
-begin
-  inherited;
-  oFornec := TFornecedor.Create;
-  dsFornec.DataSet := oFornec.GetCds;
 end;
 
 procedure TFrmFornecec.FormShow(Sender: TObject);
@@ -147,8 +156,7 @@ end;
 procedure TFrmFornecec.MostraDados;
 begin
   oFornec.GetDados;
-
-  //Ed_CodFornec.Text := oFornec.codigo;
+  //Ed_CodFornec.Value := oFornec.codigo;
   Ed_NomeFornec.Text := oFornec.nome;
   MSE_CPFFornec.Text := oFornec.cpf;
   VcodCep := oFornec.cep;

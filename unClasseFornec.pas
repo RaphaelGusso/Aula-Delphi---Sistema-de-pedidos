@@ -3,13 +3,13 @@ unit unClasseFornec;
 interface
 
 uses
-  System.SysUtils, System.Classes, Vcl.Dialogs, Datasnap.DBClient, Data.DB, Bib;
+  System.SysUtils, System.Classes, Vcl.Dialogs, Datasnap.DBClient, Data.DB, unDmFornec;
 
 type TFornecedor = class
 
   private
   //atributos privados da classe
-    Fcodigo : integer;
+    Fcodigo : Integer;
     Fnome: string;
     Fcpf: string;
     Fcep: integer;
@@ -31,7 +31,8 @@ type TFornecedor = class
     function GetCodigo: integer;
     function ValidaCPFForn(cCPF:String): boolean;
 
-    Property codigo:integer read Fcodigo write Fcodigo;
+      //atributos publicos da classe
+    Property codigo:Integer read Fcodigo write Fcodigo;
     Property nome:string read Fnome write Fnome;
     Property cpf:string read Fcpf write Fcpf;
     Property cep:integer read Fcep write Fcep;
@@ -45,7 +46,6 @@ implementation
 
 { TFornecedor }
 
-uses unDmFornec, UnFornec;
 
 procedure TFornecedor.Alterar;
 begin

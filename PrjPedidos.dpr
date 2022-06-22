@@ -13,17 +13,19 @@ uses
   unClasseFornec in 'unClasseFornec.pas',
   UnFornec in 'UnFornec.pas' {FrmFornecec},
   Bib in 'Bib.PAS',
-  UnUsuarioView in 'UnUsuarioView.pas' {FrmUsuSenhaView},
+  UnUsuarioView in 'UnUsuarioView.pas' {FrmUsuario},
   UnClasseUsuario in 'UnClasseUsuario.pas',
-  UnDMUsu in 'UnDMUsu.pas' {DMUsu: TDataModule};
+  UnDMUsu in 'UnDMUsu.pas' {DMUsu: TDataModule},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Tablet Light');
   Application.CreateForm(TFrmPedidos, FrmPedidos);
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TDMUsu, DMUsu);
   Application.Run;
 end.

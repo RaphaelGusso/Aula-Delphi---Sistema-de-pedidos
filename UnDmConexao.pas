@@ -40,7 +40,7 @@ begin
   FDConnection.Params.DriverID := 'FbDriverLink';
   FDConnection.Params.Add('server=127.0.0.1');
   FDConnection.Params.Add('port=3050');
-  FDConnection.Params.Database :='C:\Users\rapha\OneDrive\Área de Trabalho\Estudos\Projeto pedidos - aula Delphi\dbcurso.FDB';
+  FDConnection.Params.Database :='C:\Users\rapha\OneDrive\Documentos\GitHub\Aula-Delphi---Sistema-de-pedidos\dbcurso.FDB';
   FDConnection.Params.UserName := 'SYSDBA';
   FDConnection.Params.Password := 'masterkey';
   FDConnection.Params.Add('CharacterSet=ISO8859_2');

@@ -38,11 +38,14 @@ type
     Image1: TImage;
     StatusBar1: TStatusBar;
     Timer1: TTimer;
+    N4: TMenuItem;
+    Cadastrodeusurios1: TMenuItem;
     procedure ActSairExecute(Sender: TObject);
     procedure ActCEPExecute(Sender: TObject);
     procedure ActCliExecute(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure ActFornExecute(Sender: TObject);
+    procedure Cadastrodeusurios1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,7 +59,7 @@ implementation
 
 {$R *.dfm}
 
-uses UnClientes, UnFornec;
+uses UnClientes, UnFornec, UnUsuarioView;
 
 procedure TFrmPedidos.ActCEPExecute(Sender: TObject);
 begin
@@ -79,6 +82,12 @@ end;
 procedure TFrmPedidos.ActSairExecute(Sender: TObject);
 begin
   close;
+end;
+
+procedure TFrmPedidos.Cadastrodeusurios1Click(Sender: TObject);
+begin
+  Application.CreateForm(TFrmUsuario , FrmUsuario);
+  FrmUsuario.ShowModal;
 end;
 
 procedure TFrmPedidos.Timer1Timer(Sender: TObject);

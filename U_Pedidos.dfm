@@ -3,8 +3,8 @@ object FrmPedidos: TFrmPedidos
   Top = 0
   Align = alClient
   Caption = 'Sistema de controle de pedidos'
-  ClientHeight = 358
-  ClientWidth = 676
+  ClientHeight = 345
+  ClientWidth = 681
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object FrmPedidos: TFrmPedidos
   object Image1: TImage
     Left = 139
     Top = 0
-    Width = 537
-    Height = 339
+    Width = 542
+    Height = 326
     Align = alClient
     AutoSize = True
     Picture.Data = {
@@ -513,7 +513,7 @@ object FrmPedidos: TFrmPedidos
     Left = 0
     Top = 0
     Width = 139
-    Height = 339
+    Height = 326
     Align = alLeft
     ButtonHeight = 36
     ButtonWidth = 133
@@ -522,6 +522,7 @@ object FrmPedidos: TFrmPedidos
     ShowCaptions = True
     TabOrder = 0
     Transparent = True
+    ExplicitHeight = 332
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -560,8 +561,8 @@ object FrmPedidos: TFrmPedidos
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 339
-    Width = 676
+    Top = 326
+    Width = 681
     Height = 19
     Panels = <
       item
@@ -570,6 +571,8 @@ object FrmPedidos: TFrmPedidos
       item
         Width = 50
       end>
+    ExplicitTop = 332
+    ExplicitWidth = 680
   end
   object MainMenu1: TMainMenu
     Left = 616
@@ -589,6 +592,13 @@ object FrmPedidos: TFrmPedidos
         Action = ActCli
       end
       object N3: TMenuItem
+        Caption = '-'
+      end
+      object Cadastrodeusurios1: TMenuItem
+        Caption = 'Cadastro de usu'#225'rios'
+        OnClick = Cadastrodeusurios1Click
+      end
+      object N4: TMenuItem
         Caption = '-'
       end
       object Sair1: TMenuItem

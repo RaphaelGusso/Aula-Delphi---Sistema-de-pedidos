@@ -1,0 +1,144 @@
+unit UnCep;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnManPadrao, Data.DB, Datasnap.DBClient,
+  System.Actions, Vcl.ActnList, System.ImageList, Vcl.ImgList, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ComCtrls, Vcl.ToolWin, UnDMCEP, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.StdCtrls, Vcl.Mask, xmldom, xmlintf, xmldoc, Samples.Spin;
+
+type
+  TFrmCEP = class(TFrmManPadrao)
+    dscadastro: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Ed_Rua: TDBEdit;
+    Label7: TLabel;
+    Ed_Bairro: TDBEdit;
+    Label8: TLabel;
+    Ed_uf: TDBEdit;
+    Label9: TLabel;
+    DBEdit4: TDBEdit;
+    Label10: TLabel;
+    Ed_Cidade: TDBEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure actincluirExecute(Sender: TObject);
+    procedure actalterarExecute(Sender: TObject);
+    procedure actcancelarExecute(Sender: TObject);
+    procedure actexcluirExecute(Sender: TObject);
+    procedure actsalvarExecute(Sender: TObject);
+
+    procedure BuscaCEP(CEP : String);
+
+  private
+    { Private declarations }
+    VCodCEP : Integer;
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmCEP: TFrmCEP;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmCEP.actalterarExecute(Sender: TObject);
+begin
+  inherited;
+  DMCEP.CDSCEP.Edit;
+end;
+
+procedure TFrmCEP.actcancelarExecute(Sender: TObject);
+begin
+  inherited;
+  DMCEP.CDSCEP.Cancel;
+end;
+
+procedure TFrmCEP.actexcluirExecute(Sender: TObject);
+begin
+  inherited;
+  if MessageDlg('Deseja mesmo excluir o registro?', mtconfirmation,
+  [mbYes, mbNo], 0) = mrYes then
+  begin
+    DMCEP.CDSCEP.Delete;
+    DMCEP.CDSCEP.ApplyUpdates(0);
+  end;
+end;
+
+procedure TFrmCEP.actincluirExecute(Sender: TObject);
+begin
+  inherited;
+  DMCEP.CDSCEP.Append;
+end;
+
+procedure TFrmCEP.actsalvarExecute(Sender: TObject);
+begin
+  inherited;
+  DMCEP.CDSCEP.Post;
+  if (DMCEP.CDSCEP.Changecount > 0) then
+    DMCEP.CDSCEP.ApplyUpdates(-1);
+end;
+
+procedure TFrmCEP.BuscaCEP(CEP: String);
+var
+  XMLDocument1: IXMLDocument;
+  raizXML: IXMLNode;
+begin
+  XMLDocument1 := TXMLDocument.Create(nil);
+  try
+    //mm_xml.Clear;
+    XMLDocument1.FileName := 'https://viacep.com.br/ws/' + Trim(cep) + '/xml/';
+    XMLDocument1.Active := true;
+    //mm_xml.lines.text := XMLDocument1.XML.text;
+
+    raizXML := XMLDocument1.DocumentElement;
+
+    Ed_rua.Text := raizXML.ChildNodes.FindNode('logradouro').Text;
+    ed_bairro.Text := raizXML.ChildNodes.FindNode('bairro').Text;
+    ed_cidade.Text := raizXML.ChildNodes.FindNode('localidade').Text;
+    ed_uf.Text := raizXML.ChildNodes.FindNode('uf').Text;
+  finally
+  end;
+end;
+
+procedure TFrmCEP.FormCreate(Sender: TObject);
+begin
+  inherited;
+  //criando o datamodule de CEP para uso
+  if not assigned(DMCEP) then
+    DMCEP:= TDMCEP.create (nil);
+  //sempre que abrir um objeto, destrui-lo
+
+  dscadastro.dataset:= DMCEP.CDSCEP;
+end;
+
+procedure TFrmCEP.FormDestroy(Sender: TObject);
+begin
+  inherited;
+  //fecho o datasaet e destruo o objeto
+  if assigned(DMCEP) then
+  begin
+    DMCEP.CDSCEP.close;
+    Freeandnil(DMCEP);
+  end;
+
+end;
+
+procedure TFrmCEP.FormShow(Sender: TObject);
+begin
+  inherited;
+  //abro o dataset
+  DMCEP.CDSCEP.open;
+end;
+
+end.

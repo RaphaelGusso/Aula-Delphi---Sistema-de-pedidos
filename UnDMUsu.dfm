@@ -50,4 +50,11 @@ object DMUsu: TDMUsu
       Size = 200
     end
   end
+  object QrUsuarioAux: TFDQuery
+    Connection = DmConexao.FDConnection
+    SQL.Strings = (
+      '')
+    Left = 280
+    Top = 32
+  end
 end

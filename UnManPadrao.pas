@@ -53,6 +53,7 @@ type
     procedure DisplayHint(Sender : TObject);
   public
     { Public declarations }
+
   end;
 
 var
@@ -170,7 +171,8 @@ begin
   actsair.Enabled:= false;
 
   //foca na aba de formulario
-  pagecontrol1.Activepage:= TBSDados;
+  PageControl1.ActivePage := TBSDados;
+  ScrollBox1.enabled:= true;
 end;
 
 end.

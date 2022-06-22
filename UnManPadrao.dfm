@@ -1,9 +1,10 @@
 object FrmManPadrao: TFrmManPadrao
   Left = 0
   Top = 0
+  Align = alClient
   Caption = 'Form base'
-  ClientHeight = 333
-  ClientWidth = 563
+  ClientHeight = 362
+  ClientWidth = 596
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,7 +22,7 @@ object FrmManPadrao: TFrmManPadrao
   object ToolBar1: TToolBar
     Left = 0
     Top = 0
-    Width = 563
+    Width = 596
     Height = 69
     ButtonHeight = 44
     ButtonWidth = 49
@@ -31,7 +32,7 @@ object FrmManPadrao: TFrmManPadrao
     ShowCaptions = True
     ShowHint = True
     TabOrder = 0
-    ExplicitTop = -6
+    ExplicitWidth = 563
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -106,30 +107,34 @@ object FrmManPadrao: TFrmManPadrao
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 314
-    Width = 563
+    Top = 343
+    Width = 596
     Height = 19
     Panels = <
       item
         Text = 'Mensagem'
         Width = 500
       end>
+    ExplicitTop = 314
+    ExplicitWidth = 563
   end
   object pagecontrol1: TPageControl
     Left = 0
     Top = 69
-    Width = 563
-    Height = 220
-    ActivePage = TBSDados
+    Width = 596
+    Height = 249
+    ActivePage = TBSConsulta
     Align = alClient
     TabOrder = 2
+    ExplicitWidth = 563
+    ExplicitHeight = 220
     object TBSConsulta: TTabSheet
       Caption = 'Grid de Consultas'
       object gridconsulta: TDBGrid
         Left = 0
         Top = 0
-        Width = 555
-        Height = 192
+        Width = 588
+        Height = 221
         Align = alClient
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
@@ -145,21 +150,26 @@ object FrmManPadrao: TFrmManPadrao
       object ScrollBox1: TScrollBox
         Left = 0
         Top = 0
-        Width = 553
-        Height = 190
+        Width = 588
+        Height = 221
+        Align = alClient
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 585
+        ExplicitHeight = 218
       end
     end
   end
   object DBNavigator1: TDBNavigator
     Left = 0
-    Top = 289
-    Width = 563
+    Top = 318
+    Width = 596
     Height = 25
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
     Align = alBottom
     TabOrder = 3
+    ExplicitTop = 289
+    ExplicitWidth = 563
   end
   object ImageList: TImageList
     Height = 24

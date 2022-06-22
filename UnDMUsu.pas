@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Datasnap.DBClient,
-  Datasnap.Provider, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, dialogs;
+  Datasnap.Provider, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, dialogs,
+  Data.FMTBcd, Data.SqlExpr;
 
 type
   TDMUsu = class(TDataModule)
@@ -20,6 +21,7 @@ type
     CDSUsuarioUSU_TELEFONE: TStringField;
     CDSUsuarioUSU_CPF: TStringField;
     CDSUsuarioUSU_SENHA: TStringField;
+    QrUsuarioAux: TFDQuery;
   private
     { Private declarations }
   public
@@ -93,6 +95,7 @@ procedure TDMUsu.SalvarUsuario;
 begin
    try
     CDSUsuario.Post;
+    CDSUsuario.ApplyUpdates(-1);
 
   except
     on E: Exception do

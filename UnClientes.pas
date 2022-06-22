@@ -33,6 +33,7 @@ type
     Label9: TLabel;
     Ed_bairro: TEdit;
     Label10: TLabel;
+    Pnbloqueioclientes: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -42,6 +43,8 @@ type
     procedure Button1Click(Sender: TObject);
     procedure DSCadastroClienteDataChange(Sender: TObject; Field: TField);
     procedure gridconsultaTitleClick(Column: TColumn);
+    procedure actexcluirExecute(Sender: TObject);
+    procedure actcancelarExecute(Sender: TObject);
   private
     { Private declarations }
     vCodCep: integer;
@@ -61,9 +64,37 @@ implementation
 
 uses UnDMClientes, unDmCep;
 
+procedure TFrmclientes.actcancelarExecute(Sender: TObject);
+begin
+  inherited;
+  Pnbloqueioclientes.Color:= clAppWorkSpace;
+end;
+
+procedure TFrmclientes.actexcluirExecute(Sender: TObject);
+begin
+  inherited;
+  if MessageDlg('Deseja mesmo excluir o registro?', mtconfirmation,
+  [mbYes, mbNo], 0) = mrYes then
+  begin
+    DMClientes.CDSCliente.Delete;
+    DMClientes.CDSCliente.ApplyUpdates(0);
+
+  actincluir.Enabled:= true;
+  actalterar.Enabled:= true;
+  actexcluir.Enabled:= true;
+  actcancelar.Enabled:= true;
+  actsalvar.Enabled:= true;
+  actsair.Enabled:= true;
+
+  PageControl1.ActivePage := TBSConsulta;
+  ScrollBox1.enabled:= false;
+  end;
+end;
+
 procedure TFrmclientes.actincluirExecute(Sender: TObject);
 begin
   inherited;
+  Pnbloqueioclientes.Color:= clBtnFace;
   //coloco o dataset no modo de inclusão
   LimpaCampos;
   // Coloco o dataset no modo de inserção
@@ -102,6 +133,8 @@ end;
   //Persisto no banco
 if (dmClientes.cdsCliente.ChangeCount > 0) then
   dmClientes.cdsCliente.ApplyUpdates(-1);
+
+  Pnbloqueioclientes.Color:= clAppWorkSpace;
 end;
 
 procedure TFrmclientes.BuscaCEP(CEP: string);
@@ -110,7 +143,7 @@ var
   raizXML: IXMLNode;
 begin
   XMLDocument1 := TXMLDocument.Create(nil);
- try
+  try
     //mm_xml.Clear;
     XMLDocument1.FileName := 'https://viacep.com.br/ws/' + Trim(cep) + '/xml/';
     XMLDocument1.Active := true;
@@ -118,18 +151,18 @@ begin
 
     raizXML := XMLDocument1.DocumentElement;
 
-    Ed_rua.Text := raizXML.ChildNodes.FindNode('logradouro').Text;
+    ed_rua.Text := raizXML.ChildNodes.FindNode('logradouro').Text;
     ed_bairro.Text := raizXML.ChildNodes.FindNode('bairro').Text;
     ed_cidade.Text := raizXML.ChildNodes.FindNode('localidade').Text;
     ed_uf.Text := raizXML.ChildNodes.FindNode('uf').Text;
- finally
+  finally
  end;
 end;
 
 procedure TFrmclientes.Button1Click(Sender: TObject);
 begin
   inherited;
-  BuscaCEP(Ed_cep.text);
+  BuscaCEP(ed_cep.text);
 end;
 
 procedure TFrmclientes.DSCadastroClienteDataChange(Sender: TObject;
@@ -214,6 +247,9 @@ procedure TFrmclientes.ToolButton3Click(Sender: TObject);
 begin
   inherited;
   DMClientes.CDSCliente.Edit;
+  Pnbloqueioclientes.Color:= clBtnFace;
+
+
 end;
 
 end.
